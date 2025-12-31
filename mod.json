@@ -1,0 +1,25 @@
+{
+	"geode": "4.10.0",
+	"gd": {
+		"win": "2.2074",
+		"android": "2.2074",
+		"mac": "2.2074",
+		"ios": "2.2074"
+	},
+	"id": "joseii.ventilla",
+	"name": "Ventilla",
+	"version": "v1.0.0",
+	"developer": "JoseII",
+	"description": "Bored of searching a new song for your main menu theme? Use this onlineradio to add more variety of songs in your main menu. Maybe you can find here your next favourite song, who knows...",
+	"dependencies": {
+		"geode.node-ids": ">=v1.20.0"
+	},
+	"tags": [
+		"music",
+		"interface",
+		"online"
+	],
+	"links": {
+	"homepage": "https://5infin.es"
+	}
+}
