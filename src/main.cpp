@@ -24,13 +24,13 @@
 
 using namespace geode::prelude;
 
-// --- Configuration Constants ---
+// Configuration Constants
 const float VOLUMEN_MENU = 0.5f;
 const float VOLUMEN_JUEGO = 0.0f; // Silence when playing levels
 const char* RADIO_URL = "http://radio.5infin.es:8006/radio.mp3";
 const char* WEB_URL = "https://radio.5infin.es"; 
 
-// --- Global Variables ---
+// Global Variables
 FMOD::Channel* g_radioChannel = nullptr;
 FMOD::Sound* g_radioStream = nullptr;
 bool g_errorShown = false;
@@ -281,10 +281,10 @@ class $modify(RadioAppDelegate, AppDelegate) {
     void applicationDidEnterBackground() {
         AppDelegate::applicationDidEnterBackground();
         
-        // 1. Get user preference
+        // Get user preference
         bool playInBackground = Mod::get()->getSettingValue<bool>("play-in-background");
 
-        // 2. If user WANTS it to stop when minimized, pause it
+        // If user WANTS it to stop when minimized, pause it
         if (!playInBackground) {
             if (g_radioChannel && g_radioEnabled) {
                 g_radioChannel->setPaused(true);
@@ -295,9 +295,9 @@ class $modify(RadioAppDelegate, AppDelegate) {
     void applicationWillEnterForeground() {
         AppDelegate::applicationWillEnterForeground();
 
-        // 3. When coming back, resume only if:
-        //    - Radio is enabled
-        //    - We are NOT in a shop/vault (g_inSpecialRoom)
+        // When coming back, resume only if:
+        //  - Radio is enabled
+        //  - We are NOT in a shop/vault (g_inSpecialRoom)
         if (g_radioEnabled && g_radioChannel && !g_inSpecialRoom) {
             g_radioChannel->setPaused(false);
         }
