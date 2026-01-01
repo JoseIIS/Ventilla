@@ -22,5 +22,13 @@
 	"links": {
 	"homepage": "https://5infin.es",
 	"source": "https://github.com/JoseIIS/Ventilla"
+	},
+	"settings": {
+		"play-in-background": {
+			"name": "Play in Background",
+			"description": "Keep the radio playing when the game is minimized/unfocused.",
+			"type": "bool",
+			"default": false
+		}
 	}
 }
