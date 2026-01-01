@@ -1,5 +1,7 @@
 # Ventilla
-Change the menu music from Geometry Dash to a new experience by using a **non-profit** online radio :)
+Change the menu music from Geometry Dash to a new experience by using a **non-profit** online radio in the official [5inFin radio](https://radio.5infin.es/) website.
+
+For the [5inFin](https://5infin.es/) event, for all of us :)
 
 ## COPYRIGHT NOTICE FOR ARTISTS AND CONTENT CREATORS
 **- For Songwriters: If you are an artist and wish for your music to be removed from this radio station, please contact us immediately at "joseii@5infin.es" or send a DM to "@Analogias_Esp" on X to resolve the issue in no time.**
