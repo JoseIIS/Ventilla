@@ -10,7 +10,7 @@
 #include <Geode/modify/GJGarageLayer.hpp>
 #include <Geode/modify/CreatorLayer.hpp>
 #include <Geode/modify/LevelBrowserLayer.hpp>
-#include <Geode/modify/AppDelegate.hpp> // NECESARIO PARA DETECTAR MINIMIZAR
+#include <Geode/modify/AppDelegate.hpp>
 
 // Special Room Hooks (Shops, Vaults, Tower)
 #include <Geode/modify/GJShopLayer.hpp>
@@ -23,13 +23,13 @@
 
 using namespace geode::prelude;
 
-// --- Configuration Constants ---
+// Configuration Constants
 const float VOLUMEN_MENU = 0.5f;
 const float VOLUMEN_JUEGO = 0.0f;
 const char* RADIO_URL = "http://radio.5infin.es:8006/radio.mp3";
 const char* WEB_URL = "https://radio.5infin.es";
 
-// --- Global Variables ---
+// Global Variables
 FMOD::Channel* g_radioChannel = nullptr;
 FMOD::Sound* g_radioStream = nullptr;
 bool g_errorShown = false;
@@ -46,9 +46,7 @@ float g_metadataTimer = 0.0f;
 // Forward declaration
 void restaurarRadio();
 
-// ============================================================================
 // Metadata Logic
-// ============================================================================
 
 void updateMetadata() {
     if (!g_radioStream || !g_radioChannel) return;
@@ -77,9 +75,7 @@ void updateMetadata() {
     }
 }
 
-// ============================================================================
 // UI Class: Radio Status Popup
-// ============================================================================
 
 class RadioStatusPopup : public geode::Popup<> {
 protected:
@@ -214,9 +210,7 @@ public:
     }
 };
 
-// ============================================================================
 // Core Logic
-// ============================================================================
 
 void restaurarRadio() {
     auto engine = FMODAudioEngine::sharedEngine();
@@ -276,18 +270,16 @@ void pausarRadioParaSalaEspecial() {
     }
 }
 
-// ============================================================================
 // APP DELEGATE HOOK (Focus Detection)
-// ============================================================================
 
 class $modify(RadioAppDelegate, AppDelegate) {
     void applicationDidEnterBackground() {
         AppDelegate::applicationDidEnterBackground();
 
-        // 1. Get user preference
+        // Get user preference
         bool playInBackground = Mod::get()->getSettingValue<bool>("play-in-background");
 
-        // 2. If user WANTS it to stop when minimized, pause it
+        // If user WANTS it to stop when minimized, pause it
         if (!playInBackground) {
             if (g_radioChannel && g_radioEnabled) {
                 g_radioChannel->setPaused(true);
@@ -298,7 +290,7 @@ class $modify(RadioAppDelegate, AppDelegate) {
     void applicationWillEnterForeground() {
         AppDelegate::applicationWillEnterForeground();
 
-        // 3. When coming back, resume only if:
+        // When coming back, resume only if:
         //    - Radio is enabled
         //    - We are NOT in a shop/vault (g_inSpecialRoom)
         if (g_radioEnabled && g_radioChannel && !g_inSpecialRoom) {
@@ -307,9 +299,7 @@ class $modify(RadioAppDelegate, AppDelegate) {
     }
 };
 
-// ============================================================================
 // GameManager Hook
-// ============================================================================
 
 class $modify(SilenceGameManager, GameManager) {
     void playMenuMusic() { if(g_radioEnabled) {} else { GameManager::playMenuMusic(); } }
@@ -343,9 +333,7 @@ class $modify(SilenceGameManager, GameManager) {
     }
 };
 
-// ============================================================================
 // Menu Hooks
-// ============================================================================
 
 class $modify(RadioMenuLayer, MenuLayer) {
     bool init() {
@@ -382,18 +370,14 @@ class $modify(RadioPlayLayer, PlayLayer) {
     }
 };
 
-// ============================================================================
 // UI Hooks
-// ============================================================================
 class $modify(RadioLevelInfo, LevelInfoLayer) { bool init(GJGameLevel* l, bool c) { if(!LevelInfoLayer::init(l,c)) return false; restaurarRadio(); return true; } void onEnter() { LevelInfoLayer::onEnter(); restaurarRadio(); }};
 class $modify(RadioLevelSelect, LevelSelectLayer) { bool init(int p) { if(!LevelSelectLayer::init(p)) return false; restaurarRadio(); return true; }};
 class $modify(RadioGarage, GJGarageLayer) { bool init() { if(!GJGarageLayer::init()) return false; restaurarRadio(); return true; }};
 class $modify(RadioCreator, CreatorLayer) { bool init() { if(!CreatorLayer::init()) return false; restaurarRadio(); return true; }};
 class $modify(RadioLevelBrowser, LevelBrowserLayer) { bool init(GJSearchObject* s) { if(!LevelBrowserLayer::init(s)) return false; restaurarRadio(); return true; }};
 
-// ============================================================================
 // Special Room Hooks
-// ============================================================================
 class $modify(OShop, GJShopLayer) { bool init(ShopType p){ if(!GJShopLayer::init(p)) return false; pausarRadioParaSalaEspecial(); return true;}};
 class $modify(OTreasure, SecretRewardsLayer) { bool init(bool p){ if(!SecretRewardsLayer::init(p)) return false; pausarRadioParaSalaEspecial(); return true;}};
 class $modify(OV1, SecretLayer) { bool init(){ if(!SecretLayer::init()) return false; pausarRadioParaSalaEspecial(); return true;}};
