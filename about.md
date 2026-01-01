@@ -1,5 +1,7 @@
 # Ventilla - 5inFin
 
+### A new non-profit radio for all the GD comunnity
+
 ## COPYRIGHT NOTICE FOR ARTISTS AND CONTENT CREATORS
 **- For Songwriters: If you are an artist and wish for your music to be removed from this radio station, please contact us immediately at "joseii@5infin.es" or send a DM to "@Analogias_Esp" on X to resolve the issue in no time.**
 
@@ -7,9 +9,9 @@
 
 **Bring live radio to your Geometry Dash experience!**
 
-Ventilla replaces the default main menu music with a continuous, high-quality live radio stream (`radio.5infin.es`). Designed to integrate seamlessly with Geometry Dash, it offers a native look and feel while providing smart audio management.
+Ventilla replaces the default main menu music with a continuous, high-quality live radio stream (`radio.5infin.es`). 
 
-Be careful! Right now the radio its making its way to become adapted for english listeners, so dont worry if you hear any spanish voice sometimes.
+Be careful! Right now the radio its making its way to become adapted for english listeners, so, dont worry if you hear any spanish voice sometimes.
 
 ## Basic Features
 
@@ -38,7 +40,7 @@ The mod detects "Special Rooms".
     * **Website**: Quick access to the radio's webpage.
 
 ### Auto-Reconnection
-Includes a robust "Watchdog" system. If your internet flickers or the server restarts, the mod detects the silence and automatically attempts to reconnect without crashing the game.
+Includes a "Watchdog" system. If your internet flickers or the server restarts, the mod detects the silence and automatically attempts to reconnect without crashing the game.
 
 ---
 

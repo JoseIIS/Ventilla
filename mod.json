@@ -10,7 +10,7 @@
 	"name": "Ventilla",
 	"version": "v1.0.0",
 	"developer": "JoseII",
-	"description": "Bored of searching a new song for your main menu theme? Use this onlineradio to add more variety of songs in your main menu. Maybe you can find here your next favourite song, who knows...",
+	"description": "Warning: Contact us with an email to 'joseii@5infin.es' or send a DM in X to '@Analogias_Esp' if you want your music out of this radio, thank you. Bored of searching a new song for your main menu theme? Use this onlineradio to add more variety of songs in your main menu. Maybe you can find here your next favourite song, who knows...",
 	"dependencies": {
 		"geode.node-ids": ">=v1.20.0"
 	},
