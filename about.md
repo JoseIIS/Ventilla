@@ -26,11 +26,6 @@ Say goodbye to the repetitive "MenuLoop.mp3". Enjoy a 24/7 live radio broadcast 
 ### Outside of Geometry Dash
 * After you leave the game as for example to the desktop area without closing the game, the radio still sounds! This option appears in the configuration menu disabled by default.
 
-### Shop & Vault Basic Support
-The mod detects "Special Rooms".
-* If you enter a **Shop**, **The Vault**, or the **Tower**, the radio automatically pauses to let the unique atmospheric music of those rooms play.
-* When you leave, the radio resumes exactly where you left off.
-
 ### Native Basic UI & Metadata
 * Adds a new **Radio Button** to the bottom of the Main Menu.
 * Displays a native **Status Popup** showing:
