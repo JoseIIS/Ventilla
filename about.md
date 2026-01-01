@@ -21,8 +21,8 @@ Say goodbye to the repetitive "MenuLoop.mp3". Enjoy a 24/7 live radio broadcast 
 * **In Levels:** The radio automatically mutes (0% volume) when you enter a level, ensuring you can focus on the gameplay and the level's music.
 * **Auto-Resume:** As soon as you exit the level, the radio fades back in instantly.
 
-### Outside of Geometry Dash (Beta)
-* After you leave the game as for example to the desktop area without closing the game, the radio still sounds! In a near future this will be an optional feature in the menu.
+### Outside of Geometry Dash
+* After you leave the game as for example to the desktop area without closing the game, the radio still sounds! This option appears in the configuration menu disabled by default.
 
 ### Shop & Vault Basic Support
 The mod detects "Special Rooms".
