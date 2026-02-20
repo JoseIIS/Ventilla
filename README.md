@@ -1,4 +1,4 @@
-# Ventilla
+# Ventilla (AI Version)
 Change the menu music from Geometry Dash to a new experience by using a **non-profit** online radio in the official [5inFin radio](https://radio.5infin.es/) website.
 
 For the [5inFin](https://5infin.es/) event, for all of us :)
