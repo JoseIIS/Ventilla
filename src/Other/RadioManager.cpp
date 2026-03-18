@@ -141,7 +141,7 @@ void RadioManager::updateState() {
         && (!m_isInBackground || Utils::getSetting<"play-in-background", bool>())
         && Utils::getSetting<"enabled", bool>()
         && isMenuMusic
-        && !m_radioFailed
+        && (!m_radioFailed || !m_didConnect)
         && !gm->getGameVariable("0122");
 
     if (!m_firstMenuLayer && m_radioAvailable == prevRadioAvailable) {

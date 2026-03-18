@@ -1,3 +1,7 @@
+# v2.0.1
+
+* Added Discord and Twitter buttons.
+
 # v2.0.0
 
 * Complete rewrite of the mod

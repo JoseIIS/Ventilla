@@ -1,4 +1,5 @@
 #include <Geode/ui/GeodeUI.hpp>
+#include <Geode/ui/Button.hpp>
 
 #include "../Other/RadioManager.hpp"
 
@@ -21,10 +22,6 @@ VentillaPopup* VentillaPopup::create() {
     ret->autorelease();
 
     return ret;
-}
-
-void VentillaPopup::onSettings(CCObject*) {
-    openSettingsPopup(Mod::get(), false);
 }
 
 void VentillaPopup::onSlider(CCObject*) {
@@ -223,13 +220,13 @@ bool VentillaPopup::init() {
 
     setTitle("Ventilla", "goldFont.fnt", 0.8f);
 
-    auto spr = CCSprite::createWithSpriteFrameName("GJ_optionsBtn_001.png");
-    spr->setScale(0.726f);
-
-    auto btn = CCMenuItemSpriteExtra::create(spr, this, menu_selector(VentillaPopup::onSettings));
+    auto btn = Button::createWithSpriteFrameName("GJ_optionsBtn_001.png", [](Button*) {
+        openSettingsPopup(Mod::get(), false);
+    });
+    btn->setScale(0.726f);
     btn->setPosition(m_size - ccp(3, 3));
 
-    m_buttonMenu->addChild(btn);
+    m_mainLayer->addChild(btn);
 
     auto line = CCSprite::createWithSpriteFrameName("floorLine_001.png");
     line->setScaleX(0.445f);
@@ -356,8 +353,7 @@ bool VentillaPopup::init() {
 
     m_mainLayer->addChild(lbl);
 
-    spr = CCSprite::create("GJ_button_05.png");
-    spr->setScale(0.516925f);
+    auto spr = CCSprite::create("GJ_button_05.png");
 
     auto spr2 = CCSprite::create("website-icon.png"_spr);
 
@@ -365,12 +361,13 @@ bool VentillaPopup::init() {
 
     spr2->setPosition(spr2->getPosition() - ccp(0.5f, 0.5f));
 
-    btn = CCMenuItemExt::createSpriteExtra(spr, [](CCMenuItemSpriteExtra*) {
+    btn = Button::createWithNode(spr, [](Button*) {
         web::openLinkInBrowser("https://radio.5infin.es");
     });
     btn->setPosition({91, 37});
+    btn->setScale(0.516925f);
     
-    m_buttonMenu->addChild(btn);
+    m_mainLayer->addChild(btn);
 
     lbl = CCLabelBMFont::create("  Request your\nfavorite songs!", "bigFont.fnt");
     lbl->setScale(0.25f);
@@ -379,15 +376,29 @@ bool VentillaPopup::init() {
 
     m_mainLayer->addChild(lbl);
 
-    spr = CCSprite::createWithSpriteFrameName("accountBtn_messages_001.png");
-    spr->setScale(0.525f);
-
-    btn = CCMenuItemExt::createSpriteExtra(spr, [](CCMenuItemSpriteExtra*) {
+    btn = Button::createWithSpriteFrameName("accountBtn_messages_001.png", [](Button*) {
         web::openLinkInBrowser("https://forms.cloud.microsoft/e/E8PNCNQE65");
     });
+    btn->setScale(0.525f);
     btn->setPosition({227, 29});
     
-    m_buttonMenu->addChild(btn);
+    m_mainLayer->addChild(btn);
+
+    btn = Button::createWithSpriteFrameName("gj_discordIcon_001.png", [](Button*) {
+        web::openLinkInBrowser("https://discord.gg/MBGX5BTEU7");
+    });
+    btn->setScale(0.85f);
+    btn->setPosition({272, 14});
+    
+    m_mainLayer->addChild(btn);
+
+    btn = Button::createWithSpriteFrameName("gj_twIcon_001.png", [](Button*) {
+        web::openLinkInBrowser("https://x.com/Analogias_Esp");
+    });
+    btn->setScale(0.85f);
+    btn->setPosition({272, 43});
+    
+    m_mainLayer->addChild(btn);
 
     for (int i = 0; i < 16; i++) {
         auto bar = CCLayerColor::create({255, 255, 255, 67}, 10, 2);

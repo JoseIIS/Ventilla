@@ -34,7 +34,6 @@ private:
 
     bool init() override;
 
-    void onSettings(CCObject*);
     void onSlider(CCObject*);
 
     void updateSongTitle(float = 0.f);

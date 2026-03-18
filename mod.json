@@ -8,12 +8,13 @@
 	},
 	"id": "joseii.ventilla",
 	"name": "Ventilla",
-	"version": "v2.0.0",
+	"version": "v2.0.1",
 	"developer": "JoseII",
 	"description": "Play a 24/7 Live Radio in the Main Menu!",
 	"links": {
 		"source": "https://github.com/JoseIIS/Ventilla",
-		"homepage": "https://radio.5infin.es"
+		"homepage": "https://radio.5infin.es",
+		"community": "https://discord.gg/MBGX5BTEU7"
 	},
 	"tags": [
 		"universal", "gameplay", "editor", "online", "enhancement", "music", "interface", "customization"
