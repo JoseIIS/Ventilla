@@ -26,7 +26,7 @@ void RadioManager::start() {
     }
 
     auto res = FMODAudioEngine::get()->m_system->createSound(
-        "http://radio.5infin.es:8006/radio.mp3",
+        "http://ventilla.5infin.es:8100/radio.mp3",
         FMOD_CREATESTREAM | FMOD_NONBLOCKING,
         nullptr,
         &m_sound

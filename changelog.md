@@ -1,3 +1,7 @@
+# v2.0.2
+
+* Updated website link and radio location.
+
 # v2.0.1
 
 * Added Discord and Twitter buttons.

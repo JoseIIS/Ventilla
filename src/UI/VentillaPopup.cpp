@@ -362,7 +362,7 @@ bool VentillaPopup::init() {
     spr2->setPosition(spr2->getPosition() - ccp(0.5f, 0.5f));
 
     btn = Button::createWithNode(spr, [](Button*) {
-        web::openLinkInBrowser("https://radio.5infin.es");
+        web::openLinkInBrowser("https://5infin.es/home/");
     });
     btn->setPosition({91, 37});
     btn->setScale(0.516925f);
@@ -416,7 +416,7 @@ bool VentillaPopup::init() {
     updateSongTitle();
 
     schedule(schedule_selector(VentillaPopup::updateSongTitle), 0.17f, kCCRepeatForever, 1.f);
-    schedule(schedule_selector(VentillaPopup::updateSpectrum), 1.f/ 60.f, kCCRepeatForever, 0.f);
+    schedule(schedule_selector(VentillaPopup::updateSpectrum), 1.f / 60.f, kCCRepeatForever, 0.f);
 
     return true;
 }
